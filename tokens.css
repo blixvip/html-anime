@@ -1,0 +1,35 @@
+/* Desk tokens. Film colors default to the indigo script in harness/compile.js.
+   site.js replaces the --film-* values when the color script changes. */
+:root {
+  --paper: #dfe7f2;
+  --paper-2: #f4f7fb;
+  --ink: #1a1e2c;
+  --ink-soft: #3a4256;
+  --rule: #c5d0e0;
+  --peg: #b7c3d6;
+  --peg-light: #f7fbff;
+  --mark: #a31228;
+  --mark-deep: #871022;
+  --font-display: "Shippori Mincho", "Iowan Old Style", Palatino, serif;
+  --font-body: Outfit, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --film-sky: #1b2d6b;
+  --film-ink: #101628;
+  --film-moon: #d5e2ff;
+  --film-accent: #e23b4a;
+  --film-practical: #f0c36a;
+  --film-iris: #e7a04a;
+  --film-skin: #f0c2ae;
+  --film-hair: #16141c;
+  --film-sclera: #f6f3ee;
+  --film-line: #e7eefc;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur: 160ms;
+}

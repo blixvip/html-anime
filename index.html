@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Genga — an anime, drawn in code</title>
+    <meta
+      name="description"
+      content="Write a scene. Genga turns it into a shot sheet for Claude, Codex, Cursor, or Grok to draw as a code anime."
+    />
+    <meta name="theme-color" content="#dfe7f2" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Outfit:wght@400;500;600&family=Shippori+Mincho:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="site.css" />
+  </head>
+  <body>
+    <a class="skip" href="#sheet">Skip to the sheet</a>
+    <header>
+      <div class="pegs" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <div class="bar">
+        <a class="mark" href="#top">Genga</a>
+        <nav>
+          <a href="#sheet">Sheet</a>
+          <a href="#skills">Skills</a>
+          <a href="#agents">Agents</a>
+        </nav>
+      </div>
+    </header>
+    <main id="top">
+      <div class="hero">
+        <div class="lede">
+          <h1>An anime,<br />drawn in code.</h1>
+          <p>
+            Write the scene. The sheet sets the shots, the holds, and the only colors
+            the agent may use. Paste it into Claude, Codex, Cursor, or Grok.
+          </p>
+        </div>
+
+        <div class="stage-wrap">
+          <div
+            class="stage"
+            id="stage"
+            data-shot="wide"
+            data-pose="a"
+            data-flare="off"
+            data-aspect="16:9"
+            data-script="indigo"
+            role="img"
+            aria-label="Reference film. A figure on a roof under a red moon, then a close-up in the rain."
+          >
+            <svg viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="var(--film-ink)" />
+                  <stop offset="0.45" stop-color="var(--film-sky)" />
+                  <stop offset="1" stop-color="var(--film-ink)" />
+                </linearGradient>
+                <clipPath id="picture">
+                  <rect x="0" y="64" width="1920" height="936" />
+                </clipPath>
+              </defs>
+
+              <g clip-path="url(#picture)">
+                <rect width="1920" height="1080" fill="url(#sky)" />
+                <g class="moon" transform="translate(1460 240)">
+                  <circle r="118" fill="var(--film-accent)" opacity="0.28" />
+                  <g stroke="var(--film-accent)" stroke-width="4" opacity="0.7">
+                    <path d="M0,-150 L0,-128" />
+                    <path d="M0,150 L0,128" />
+                    <path d="M-150,0 L-128,0" />
+                    <path d="M150,0 L128,0" />
+                    <path d="M-106,-106 L-90,-90" />
+                    <path d="M106,-106 L90,-90" />
+                    <path d="M-106,106 L-90,90" />
+                    <path d="M106,106 L90,90" />
+                  </g>
+                  <circle r="74" fill="var(--film-moon)" />
+                  <circle r="74" fill="none" stroke="var(--film-accent)" stroke-width="7" />
+                </g>
+
+                <g class="flare" fill="var(--film-practical)">
+                  <polygon points="1408,300 860,500 890,534 1452,326" />
+                </g>
+
+                <path
+                  fill="var(--film-ink)"
+                  d="M0,760 L0,560 L70,560 L90,470 L150,470 L170,560 L250,560 L250,500 L340,420 L430,500 L430,620 L520,620 L540,540 L640,540 L660,640 L760,640 L780,500 L900,470 L1020,520 L1020,700 L1160,700 L1180,580 L1320,560 L1460,620 L1460,740 L1600,740 L1640,480 L1680,430 L1740,480 L1780,740 L1920,760 L1920,860 L0,860 Z"
+                />
+                <g fill="var(--film-practical)">
+                  <rect class="win" x="188" y="520" width="10" height="16" />
+                  <rect x="360" y="470" width="12" height="18" />
+                  <rect x="560" y="580" width="9" height="14" />
+                  <rect class="win" x="820" y="530" width="11" height="16" />
+                  <rect x="1240" y="620" width="10" height="14" />
+                  <rect x="1690" y="520" width="8" height="22" />
+                  <rect x="1710" y="548" width="8" height="12" />
+                </g>
+
+                <path fill="var(--film-ink)" d="M0,900 L380,820 L980,790 L1500,830 L1920,900 L1920,1080 L0,1080 Z" />
+                <path
+                  d="M0,900 L380,820 L980,790 L1500,830 L1920,900"
+                  fill="none"
+                  stroke="var(--film-line)"
+                  stroke-width="3"
+                  opacity="0.35"
+                />
+
+                <g class="fig fig-a" transform="translate(760 800)" fill="var(--film-line)">
+                  <path d="M-6,-248 C-78,-236 -108,-180 -92,-120 L-28,-150 C-34,-196 -18,-236 4,-250 Z" />
+                  <circle cx="6" cy="-228" r="34" />
+                  <path d="M-42,-200 L-58,-8 L-16,14 L34,10 L48,-36 L16,-200 Z" />
+                  <path d="M12,-160 L46,-188 L54,-170 L20,-144 Z" />
+                </g>
+                <g class="fig fig-b" transform="translate(748 802)" fill="var(--film-line)">
+                  <path d="M-8,-246 C-96,-228 -130,-160 -108,-96 L-30,-140 C-40,-190 -22,-236 2,-250 Z" />
+                  <circle cx="8" cy="-226" r="34" />
+                  <path d="M-40,-198 L-64,0 L-14,16 L38,8 L46,-40 L18,-198 Z" />
+                  <path d="M14,-158 L52,-196 L62,-176 L22,-140 Z" />
+                </g>
+                <g class="fig fig-reach" transform="translate(760 800)" fill="var(--film-line)">
+                  <path d="M-4,-248 C-70,-232 -96,-170 -78,-118 L-24,-148 C-30,-194 -16,-236 6,-250 Z" />
+                  <circle cx="8" cy="-226" r="34" />
+                  <path d="M-38,-196 L-52,-4 L-12,14 L30,8 L24,-196 Z" />
+                  <path d="M8,-170 L78,-292 L96,-270 L22,-152 Z" />
+                </g>
+              </g>
+
+              <g class="shot shot-close">
+                <rect width="1920" height="1080" fill="url(#sky)" />
+                <g transform="translate(860 490)">
+                  <path fill="var(--film-hair)" d="M-20,-230 C110,-250 210,-140 196,-20 C184,90 120,180 30,200 C70,70 120,-10 108,-90 C96,-170 20,-210 -24,-196 C-120,-220 -200,-110 -196,0 C-192,120 -110,210 -30,230 L-64,180 C-150,140 -214,50 -206,-40 C-198,-160 -120,-230 -20,-230 Z" />
+                  <path fill="var(--film-hair)" d="M90,-40 C150,-10 186,90 160,210 C148,270 112,286 100,240 C124,150 108,30 62,-16 Z" />
+                  <path fill="var(--film-moon)" d="M24,-200 L78,-186 L58,-124 L8,-146 Z" />
+                  <path fill="var(--film-skin)" d="M-36,150 L-22,250 L40,250 L26,146 Z" />
+                  <path fill="var(--film-skin)" d="M4,-186 C108,-192 162,-78 146,22 C132,118 74,184 4,198 C-74,184 -140,108 -154,8 C-168,-92 -96,-180 4,-186 Z" />
+                  <path fill="var(--film-skin)" d="M-148,30 C-176,52 -174,108 -146,122 C-160,90 -162,58 -148,30 Z" />
+                  <path fill="var(--film-ink)" opacity="0.2" d="M-154,8 C-136,100 -70,170 4,198 C-24,140 -36,60 -12,-16 C-60,-8 -114,0 -154,8 Z" />
+                  <path fill="var(--film-hair)" d="M-170,-20 L-120,-168 L-78,-24 Z" />
+                  <path fill="var(--film-hair)" d="M-70,-16 L-16,-188 L46,-12 Z" />
+                  <path fill="var(--film-hair)" d="M36,-8 L92,-162 L156,-6 Z" />
+                  <path fill="var(--film-hair)" d="M-168,-8 C-80,-70 80,-74 160,0 L150,-40 L90,-150 L-16,-170 L-120,-150 L-170,-36 Z" />
+                  <g class="eyes-open">
+                    <g transform="translate(-58,-8)">
+                      <ellipse cx="0" cy="0" rx="34" ry="27" fill="var(--film-sclera)" />
+                      <circle cx="8" cy="2" r="16" fill="var(--film-iris)" />
+                      <circle cx="10" cy="3" r="8" fill="var(--film-hair)" />
+                      <rect x="-2" y="-12" width="9" height="7" fill="var(--film-line)" />
+                      <path d="M-36,-6 Q0,-34 36,-4" fill="none" stroke="var(--film-hair)" stroke-width="7" stroke-linecap="round" />
+                      <path d="M-30,14 Q0,28 30,12" fill="none" stroke="var(--film-hair)" stroke-width="2.5" stroke-linecap="round" />
+                    </g>
+                    <g transform="translate(72,6)">
+                      <ellipse cx="0" cy="0" rx="48" ry="36" fill="var(--film-sclera)" />
+                      <circle cx="12" cy="3" r="22" fill="var(--film-iris)" />
+                      <circle cx="14" cy="4" r="11" fill="var(--film-hair)" />
+                      <rect x="-6" y="-14" width="12" height="9" fill="var(--film-line)" />
+                      <rect x="16" y="8" width="6" height="5" fill="var(--film-line)" />
+                      <path d="M-50,-8 Q0,-44 50,-6" fill="none" stroke="var(--film-hair)" stroke-width="8" stroke-linecap="round" />
+                      <path d="M-42,18 Q0,38 42,16" fill="none" stroke="var(--film-hair)" stroke-width="3" stroke-linecap="round" />
+                    </g>
+                    <path d="M-98,-42 Q-58,-64 -22,-40" fill="none" stroke="var(--film-hair)" stroke-width="5" stroke-linecap="round" />
+                    <path d="M28,-36 Q72,-62 124,-30" fill="none" stroke="var(--film-hair)" stroke-width="6" stroke-linecap="round" />
+                  </g>
+                  <g class="eyes-shut" fill="none" stroke="var(--film-hair)" stroke-width="6" stroke-linecap="round">
+                    <path d="M-92,-8 Q-58,6 -24,-8" />
+                    <path d="M24,-2 Q72,14 120,-2" />
+                  </g>
+                  <path d="M28,62 Q40,96 32,112" fill="none" stroke="var(--film-ink)" stroke-width="4" stroke-linecap="round" opacity="0.45" />
+                  <path d="M8,132 Q32,146 58,130" fill="none" stroke="var(--film-hair)" stroke-width="4" stroke-linecap="round" />
+                  <path fill="var(--film-hair)" d="M-110,210 L-140,340 L150,340 L96,200 C30,248 -30,252 -110,210 Z" />
+                  <path d="M-120,248 Q10,286 120,236" fill="none" stroke="var(--film-accent)" stroke-width="5" stroke-linecap="round" />
+                </g>
+              </g>
+
+              <rect x="0" y="0" width="1920" height="56" fill="var(--film-ink)" />
+              <rect x="0" y="980" width="1920" height="100" fill="var(--film-ink)" />
+              <text class="cap" x="960" y="1042" text-anchor="middle">The rain hid the sound of the blade.</text>
+            </svg>
+            <div class="rain" aria-hidden="true"></div>
+            <div class="rain rain-far" aria-hidden="true"></div>
+          </div>
+          <div class="slate">
+            <span id="counter">001</span>
+            <span>films/roof · on twos</span>
+            <button type="button" id="hold" aria-pressed="false">Hold</button>
+          </div>
+          <div class="times">
+            <div class="cells" id="cells" aria-hidden="true"></div>
+            <input id="frame" type="range" min="0" max="23" value="0" aria-label="Frame of the reference" />
+          </div>
+        </div>
+
+        <form class="desk" id="sheet" autocomplete="off">
+          <label class="field">
+            <span>Scene</span>
+            <textarea name="logline">On a roof in the rain, a red moon opens and a line of light falls. Someone catches it.</textarea>
+          </label>
+          <label class="field">
+            <span>Line</span>
+            <input type="text" name="dialogue" value="The rain hid the sound of the blade." />
+          </label>
+          <div>
+            <div class="seg-label" id="len-label">Length</div>
+            <div class="seg" role="radiogroup" aria-labelledby="len-label">
+              <label><input type="radio" name="seconds" value="8" checked />8s</label>
+              <label><input type="radio" name="seconds" value="12" />12s</label>
+              <label><input type="radio" name="seconds" value="20" />20s</label>
+            </div>
+          </div>
+          <div>
+            <div class="seg-label" id="frame-label">Frame</div>
+            <div class="seg" role="radiogroup" aria-labelledby="frame-label">
+              <label><input type="radio" name="aspect" value="16:9" checked />16:9</label>
+              <label><input type="radio" name="aspect" value="9:16" />9:16</label>
+            </div>
+          </div>
+          <div>
+            <div class="seg-label" id="script-label">Color script</div>
+            <div class="seg" role="radiogroup" aria-labelledby="script-label">
+              <label class="chip" data-script="indigo"><input type="radio" name="script" value="indigo" checked /><i class="swatch"></i><span>Indigo moon</span></label>
+              <label class="chip" data-script="eclipse"><input type="radio" name="script" value="eclipse" /><i class="swatch"></i><span>Vermilion eclipse</span></label>
+              <label class="chip" data-script="noon"><input type="radio" name="script" value="noon" /><i class="swatch"></i><span>Paper noon</span></label>
+              <label class="chip" data-script="festival"><input type="radio" name="script" value="festival" /><i class="swatch"></i><span>Festival</span></label>
+            </div>
+          </div>
+          <div>
+            <div class="seg-label" id="agent-label">Agent</div>
+            <div class="seg" role="radiogroup" aria-labelledby="agent-label">
+              <label><input type="radio" name="agent" value="claude" checked />Claude</label>
+              <label><input type="radio" name="agent" value="codex" />Codex</label>
+              <label><input type="radio" name="agent" value="cursor" />Cursor</label>
+              <label><input type="radio" name="agent" value="grok" />Grok</label>
+            </div>
+          </div>
+          <pre id="out" tabindex="0"></pre>
+          <div class="actions">
+            <button type="button" id="copy-sheet">Copy sheet</button>
+            <button type="button" id="copy-command" class="secondary">Copy command</button>
+          </div>
+          <p id="status" role="status"></p>
+        </form>
+      </div>
+
+      <section id="skills">
+        <h2>Five skills. Each owns one job.</h2>
+        <p class="section-lead">The sheet points at them. The agent reads them in order. A rule lives in one skill.</p>
+        <table>
+          <tbody>
+            <tr>
+              <th><a href="skills/genga-direct/SKILL.md">Direct</a></th>
+              <td>Which shots exist, and which one of them may be expensive.</td>
+            </tr>
+            <tr>
+              <th><a href="skills/genga-cel/SKILL.md">Cel</a></th>
+              <td>Flat color, one hard shadow, a silhouette behind the figure, rain on its own layer.</td>
+            </tr>
+            <tr>
+              <th><a href="skills/genga-timing/SKILL.md">Timing</a></th>
+              <td>Twos for acting. A hold of at least 12 frames. One or two smear frames in the sakuga shot.</td>
+            </tr>
+            <tr>
+              <th><a href="skills/genga-camera/SKILL.md">Camera</a></th>
+              <td>Where the cut is, where the eyes sit, and how a tall frame is composed.</td>
+            </tr>
+            <tr>
+              <th><a href="skills/genga-render/SKILL.md">Render</a></th>
+              <td>The HyperFrames file. A color dip is the cut. Lint has to pass.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="agents">
+        <h2>Hand the sheet to an agent.</h2>
+        <p class="section-lead" id="agent-note"></p>
+        <pre id="command"></pre>
+      </section>
+    </main>
+    <footer>
+      <span>Frames are code, rendered with <a href="https://github.com/heygen-com/hyperframes">HyperFrames</a>.</span>
+      <span>Reference short: <a href="films/roof/index.html">films/roof</a></span>
+    </footer>
+    <script type="module" src="site.js"></script>
+  </body>
+</html>

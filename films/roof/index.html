@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Roof — Genga reference</title>
+    <style>
+      @font-face {
+        font-family: "Shippori Mincho";
+        src: url("fonts/shippori-mincho-500.woff2") format("woff2");
+        font-weight: 500;
+        font-style: normal;
+        font-display: block;
+      }
+      html,
+      body {
+        margin: 0;
+        background: #101628;
+      }
+      #root {
+        position: relative;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: #101628;
+      }
+      .clip {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+      }
+      .world,
+      .close-world {
+        width: 1920px;
+        height: 1080px;
+        transform-origin: 50% 62%;
+      }
+      #dip {
+        background: #e23b4a;
+        z-index: 4;
+      }
+      .fig,
+      .flare,
+      #dip {
+        opacity: 0;
+      }
+      .line {
+        font-family: "Shippori Mincho", Palatino, serif;
+        font-size: 46px;
+        font-weight: 500;
+        fill: #f0c36a;
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  </head>
+  <body>
+    <div id="root" data-composition-id="roof" data-start="0" data-duration="8" data-width="1920" data-height="1080">
+      <div id="s1" class="clip" data-start="0" data-duration="6.15" data-track-index="1">
+        <svg class="world" viewBox="0 0 1920 1080">
+          <defs>
+            <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#101628" />
+              <stop offset="0.45" stop-color="#1b2d6b" />
+              <stop offset="1" stop-color="#101628" />
+            </linearGradient>
+          </defs>
+          <rect width="1920" height="1080" fill="url(#sky)" />
+          <g id="rain" stroke="#e7eefc" stroke-width="2" opacity="0.45">
+            <path d="M80,40 l-18,90 M160,120 l-18,90 M240,20 l-18,90 M340,160 l-18,90 M460,60 l-18,90 M560,200 l-18,90 M680,30 l-18,90 M800,140 l-18,90 M920,50 l-18,90 M1040,180 l-18,90 M1160,70 l-18,90 M1280,150 l-18,90 M1400,40 l-18,90 M1520,130 l-18,90 M1660,60 l-18,90 M1800,170 l-18,90" />
+            <path d="M120,400 l-18,90 M260,480 l-18,90 M400,360 l-18,90 M620,520 l-18,90 M860,420 l-18,90 M1100,500 l-18,90 M1340,380 l-18,90 M1580,460 l-18,90" opacity="0.6" />
+          </g>
+          <g transform="translate(1460 240)">
+            <circle r="118" fill="#e23b4a" opacity="0.28" />
+            <g id="moon">
+              <circle r="74" fill="#d5e2ff" />
+              <circle r="74" fill="none" stroke="#e23b4a" stroke-width="7" />
+            </g>
+          </g>
+          <polygon id="flare" class="flare" fill="#f0c36a" points="1408,300 860,500 890,534 1452,326" />
+          <path fill="#101628" d="M0,760 L0,560 L70,560 L90,470 L150,470 L170,560 L250,560 L250,500 L340,420 L430,500 L430,620 L520,620 L540,540 L640,540 L660,640 L760,640 L780,500 L900,470 L1020,520 L1020,700 L1160,700 L1180,580 L1320,560 L1460,620 L1460,740 L1600,740 L1640,480 L1680,430 L1740,480 L1780,740 L1920,760 L1920,860 L0,860 Z" />
+          <g fill="#f0c36a">
+            <rect x="188" y="520" width="10" height="16" />
+            <rect x="360" y="470" width="12" height="18" />
+            <rect x="560" y="580" width="9" height="14" />
+            <rect x="820" y="530" width="11" height="16" />
+            <rect x="1240" y="620" width="10" height="14" />
+            <rect x="1690" y="520" width="8" height="22" />
+          </g>
+          <path fill="#101628" d="M0,900 L380,820 L980,790 L1500,830 L1920,900 L1920,1080 L0,1080 Z" />
+          <g id="fig-a" class="fig" transform="translate(760 800)" fill="#e7eefc">
+            <path d="M-6,-248 C-78,-236 -108,-180 -92,-120 L-28,-150 C-34,-196 -18,-236 4,-250 Z" />
+            <circle cx="6" cy="-228" r="34" />
+            <path d="M-42,-200 L-58,-8 L-16,14 L34,10 L48,-36 L16,-200 Z" />
+            <path d="M12,-160 L46,-188 L54,-170 L20,-144 Z" />
+          </g>
+          <g id="fig-b" class="fig" transform="translate(748 802)" fill="#e7eefc">
+            <path d="M-8,-246 C-96,-228 -130,-160 -108,-96 L-30,-140 C-40,-190 -22,-236 2,-250 Z" />
+            <circle cx="8" cy="-226" r="34" />
+            <path d="M-40,-198 L-64,0 L-14,16 L38,8 L46,-40 L18,-198 Z" />
+            <path d="M14,-158 L52,-196 L62,-176 L22,-140 Z" />
+          </g>
+          <g id="fig-reach" class="fig" transform="translate(760 800)" fill="#e7eefc">
+            <path d="M-4,-248 C-70,-232 -96,-170 -78,-118 L-24,-148 C-30,-194 -16,-236 6,-250 Z" />
+            <circle cx="8" cy="-226" r="34" />
+            <path d="M-38,-196 L-52,-4 L-12,14 L30,8 L24,-196 Z" />
+            <path d="M8,-170 L78,-292 L96,-270 L22,-152 Z" />
+          </g>
+          <rect x="0" y="0" width="1920" height="56" fill="#101628" />
+          <rect x="0" y="1000" width="1920" height="80" fill="#101628" />
+        </svg>
+      </div>
+
+      <div id="s2" class="clip" data-start="5.9" data-duration="2.1" data-track-index="2">
+        <svg class="close-world" viewBox="0 0 1920 1080">
+          <rect width="1920" height="1080" fill="#1b2d6b" />
+          <g transform="translate(860 490)">
+            <path fill="#16141c" d="M-20,-230 C110,-250 210,-140 196,-20 C184,90 120,180 30,200 C70,70 120,-10 108,-90 C96,-170 20,-210 -24,-196 C-120,-220 -200,-110 -196,0 C-192,120 -110,210 -30,230 L-64,180 C-150,140 -214,50 -206,-40 C-198,-160 -120,-230 -20,-230 Z" />
+            <path fill="#16141c" d="M90,-40 C150,-10 186,90 160,210 C148,270 112,286 100,240 C124,150 108,30 62,-16 Z" />
+            <path fill="#d5e2ff" d="M24,-200 L78,-186 L58,-124 L8,-146 Z" />
+            <path fill="#f0c2ae" d="M-36,150 L-22,250 L40,250 L26,146 Z" />
+            <path fill="#f0c2ae" d="M4,-186 C108,-192 162,-78 146,22 C132,118 74,184 4,198 C-74,184 -140,108 -154,8 C-168,-92 -96,-180 4,-186 Z" />
+            <path fill="#101628" opacity="0.2" d="M-154,8 C-136,100 -70,170 4,198 C-24,140 -36,60 -12,-16 C-60,-8 -114,0 -154,8 Z" />
+            <path fill="#16141c" d="M-170,-20 L-120,-168 L-78,-24 Z" />
+            <path fill="#16141c" d="M-70,-16 L-16,-188 L46,-12 Z" />
+            <path fill="#16141c" d="M36,-8 L92,-162 L156,-6 Z" />
+            <path fill="#16141c" d="M-168,-8 C-80,-70 80,-74 160,0 L150,-40 L90,-150 L-16,-170 L-120,-150 L-170,-36 Z" />
+            <g transform="translate(-58,-8)">
+              <ellipse cx="0" cy="0" rx="34" ry="27" fill="#f6f3ee" />
+              <circle cx="8" cy="2" r="16" fill="#e7a04a" />
+              <circle cx="10" cy="3" r="8" fill="#16141c" />
+              <path d="M-36,-6 Q0,-34 36,-4" fill="none" stroke="#16141c" stroke-width="7" stroke-linecap="round" />
+            </g>
+            <g transform="translate(72,6)">
+              <ellipse cx="0" cy="0" rx="48" ry="36" fill="#f6f3ee" />
+              <circle cx="12" cy="3" r="22" fill="#e7a04a" />
+              <circle cx="14" cy="4" r="11" fill="#16141c" />
+              <rect x="-6" y="-14" width="12" height="9" fill="#e7eefc" />
+              <path d="M-50,-8 Q0,-44 50,-6" fill="none" stroke="#16141c" stroke-width="8" stroke-linecap="round" />
+            </g>
+            <path d="M28,62 Q40,96 32,112" fill="none" stroke="#101628" stroke-width="4" stroke-linecap="round" opacity="0.45" />
+            <path d="M8,132 Q32,146 58,130" fill="none" stroke="#16141c" stroke-width="4" stroke-linecap="round" />
+            <path fill="#16141c" d="M-110,210 L-140,340 L150,340 L96,200 C30,248 -30,252 -110,210 Z" />
+            <path d="M-120,248 Q10,286 120,236" fill="none" stroke="#e23b4a" stroke-width="5" stroke-linecap="round" />
+          </g>
+          <rect x="0" y="0" width="1920" height="56" fill="#101628" />
+          <rect x="0" y="980" width="1920" height="100" fill="#101628" />
+          <text id="line" class="line" x="960" y="1042" text-anchor="middle">The rain hid the sound of the blade.</text>
+        </svg>
+      </div>
+
+      <div id="dip" class="clip" data-start="5.7" data-duration="0.85" data-track-index="3"></div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      tl.from("#moon", { scale: 0.92, opacity: 0, duration: 0.6, ease: "power2.out", transformOrigin: "50% 50%" }, 0.2);
+      tl.from("#rain", { opacity: 0, duration: 0.5, ease: "power1.out" }, 0.15);
+      tl.to("#rain", { y: 90, duration: 0.5, ease: "none", repeat: 15 }, 0);
+      tl.fromTo(".world", { scale: 1 }, { scale: 1.06, duration: 2.4, ease: "power1.inOut" }, 0.2);
+      tl.set("#fig-a", { opacity: 1 }, 0.8);
+      tl.set("#fig-a", { opacity: 0 }, 1.6);
+      tl.set("#fig-b", { opacity: 1 }, 1.6);
+      tl.set("#fig-b", { opacity: 0 }, 2.4);
+      tl.set("#fig-reach", { opacity: 1 }, 2.4);
+      tl.set("#flare", { opacity: 1 }, 2.5);
+      tl.to("#dip", { opacity: 1, duration: 0.25, ease: "power2.in" }, 5.75);
+      tl.to("#dip", { opacity: 0, duration: 0.35, ease: "power2.out" }, 6.05);
+      tl.from("#line", { y: 24, opacity: 0, duration: 0.4, ease: "power3.out" }, 6.35);
+      tl.to("#s2", { opacity: 0, duration: 0.33, ease: "power1.in" }, 7.67);
+      window.__timelines = window.__timelines || {};
+      window.__timelines["roof"] = tl;
+    </script>
+  </body>
+</html>

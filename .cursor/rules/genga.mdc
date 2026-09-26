@@ -1,0 +1,6 @@
+---
+description: Draw a Genga anime in code when the user pastes a sheet or asks for a code-drawn anime.
+alwaysApply: true
+---
+
+Follow AGENTS.md. Read the five skills in `skills/` before drawing. The sheet is the brief.

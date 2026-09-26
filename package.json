@@ -1,0 +1,8 @@
+{
+  "name": "genga",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node harness/compile.test.mjs"
+  }
+}
