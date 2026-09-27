@@ -153,6 +153,38 @@ body.is-live .serve-hint { display: none; }
 
 .stage-wrap { align-self: start; }
 
+.film {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #070910;
+  outline: 1px solid var(--ink);
+  object-fit: contain;
+}
+
+.film-note {
+  margin: 8px 0 0;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  color: var(--ink-soft);
+}
+
+.stills {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.stills img {
+  display: block;
+  width: 100%;
+  height: auto;
+  outline: 1px solid var(--ink);
+  background: #070910;
+}
+
 .stage {
   position: relative;
   width: 100%;
@@ -518,7 +550,7 @@ footer a { color: var(--ink); }
 @media (min-width: 960px) {
   .hero { grid-template-columns: minmax(0, 1.35fr) minmax(260px, 0.82fr); }
   .lede { grid-column: 1 / -1; }
-  .stage-wrap { position: sticky; top: 20px; }
+  .stage-wrap { position: static; }
 }
 
 @media (max-width: 959px) {

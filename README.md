@@ -4,6 +4,20 @@ An anime, written as HTML. You write a scene. [The site](https://blixvip.github.
 
 The pictures are HTML, timed for [HyperFrames](https://github.com/heygen-com/hyperframes). Nothing here calls a video model.
 
+## The film
+
+Kokuyō. Watch it on [the site](https://blixvip.github.io/html-anime/) or open [media/film.mp4](media/film.mp4).
+
+![A moon over the night city](media/city.jpg)
+
+![A cracked moon falling through rain](media/moon.jpg)
+
+![Two figures crossing blades in front of the moon](media/fight.jpg)
+
+![A dark helm with a red crescent](media/helm.jpg)
+
+![A close-up washed in white light](media/ren.jpg)
+
 ## Start
 
 ```
@@ -37,6 +51,8 @@ Opening `index.html` as a file shows that same instruction. The sheet will not r
 - `skills/html-anime-camera/SKILL.md` — the cut and the frame
 - `skills/html-anime-render/SKILL.md` — the HyperFrames file
 - `harness/compile.js` — logline to sheet
+- `media/film.mp4` — Kokuyō, the film
+- `media/city.jpg`, `media/moon.jpg`, `media/fight.jpg`, `media/helm.jpg`, `media/ren.jpg` — stills from it
 - `films/roof/` — an 8 second reference. File shape and the color-dip cut, not a film to remix
 - `AGENTS.md` — the contract
 
