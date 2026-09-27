@@ -18,19 +18,19 @@ const CUT = 16;
 const AGENTS = {
   claude: {
     note: "Claude Code reads CLAUDE.md, then the five skills.",
-    command: "git clone https://github.com/wasely/genga.git\ncd genga\nclaude",
+    command: "git clone https://github.com/wasely/html-anime.git\ncd html-anime\nclaude",
   },
   codex: {
     note: "Codex reads AGENTS.md, then the five skills.",
-    command: "git clone https://github.com/wasely/genga.git\ncd genga\ncodex",
+    command: "git clone https://github.com/wasely/html-anime.git\ncd html-anime\ncodex",
   },
   cursor: {
-    note: "Cursor reads .cursor/rules/genga.mdc. Paste the sheet into Agent.",
-    command: "git clone https://github.com/wasely/genga.git\ncd genga\ncursor .",
+    note: "Cursor reads .cursor/rules/html-anime.mdc. Paste the sheet into Agent.",
+    command: "git clone https://github.com/wasely/html-anime.git\ncd html-anime\ncursor .",
   },
   grok: {
     note: "Grok reads AGENTS.md, then the five skills.",
-    command: "git clone https://github.com/wasely/genga.git\ncd genga\ngrok",
+    command: "git clone https://github.com/wasely/html-anime.git\ncd html-anime\ngrok",
   },
 };
 

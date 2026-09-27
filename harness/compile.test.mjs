@@ -21,6 +21,7 @@ const brief = compileBrief({
 assert.equal(brief.ok, true);
 assert.equal(brief.frames, 192);
 assert.equal(brief.slug, "roof-rain-red-moon");
+assert.match(brief.markdown, /^# html-anime\n/);
 assert.match(brief.markdown, /1920×1080/);
 assert.match(brief.markdown, /192 frames/);
 assert.match(brief.markdown, /Do not translate/);

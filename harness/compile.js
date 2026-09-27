@@ -1,6 +1,6 @@
 /**
- * Turns a scene into a Genga sheet.
- * Drawing budgets match skills/genga-timing/SKILL.md.
+ * Turns a scene into an html-anime sheet.
+ * Drawing budgets match skills/html-anime-timing/SKILL.md.
  * Color scripts are the only paints an agent may use.
  */
 
@@ -191,7 +191,7 @@ export function compileBrief(input) {
     .join("\n");
 
   const markdown = [
-    "# Genga sheet",
+    "# html-anime",
     "",
     logline,
     "",
@@ -214,7 +214,7 @@ export function compileBrief(input) {
     "",
     "## Build",
     `Write films/${slug}/index.html.`,
-    "Read, in order: skills/genga-direct/SKILL.md, skills/genga-cel/SKILL.md, skills/genga-timing/SKILL.md, skills/genga-camera/SKILL.md, skills/genga-render/SKILL.md.",
+    "Read, in order: skills/html-anime-direct/SKILL.md, skills/html-anime-cel/SKILL.md, skills/html-anime-timing/SKILL.md, skills/html-anime-camera/SKILL.md, skills/html-anime-render/SKILL.md.",
     "films/roof/index.html shows the file shape and the color-dip cut. Draw this sheet, not a remix of that film.",
     "Use only the hexes above. One sakuga shot.",
     "Done when `npx hyperframes lint` and `npx hyperframes validate` pass in that film's directory.",

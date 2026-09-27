@@ -1,6 +1,6 @@
 ---
-name: genga-camera
-description: Frame and cut a code-drawn anime — wide, close, look room, and where type sits in 16:9 or 9:16. Use when choosing a Genga shot size, placing a face, or cutting between drawings.
+name: html-anime-camera
+description: Frame and cut a code-drawn anime — wide, close, look room, and where type sits in 16:9 or 9:16. Use when choosing an html-anime shot size, placing a face, or cutting between drawings.
 ---
 
 # Camera
@@ -13,7 +13,7 @@ Cut on the action. The settle is the first frames of the next shot, not the tail
 - Sakuga is a medium or a tight action. The body reads in silhouette.
 - Button is a close-up, or a return to the wide, plus the line.
 
-Get closer by cutting. The only zoom is the 100% to 106% hold described in `skills/genga-timing/SKILL.md`.
+Get closer by cutting. The only zoom is the 100% to 106% hold described in `skills/html-anime-timing/SKILL.md`.
 
 ## Placement
 

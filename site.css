@@ -38,18 +38,13 @@ body {
 
 .skip:focus { top: var(--space-2); }
 
-.pegs {
-  display: flex;
-  justify-content: space-between;
-  padding: 14px 28px 0;
-}
-
-.pegs span {
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 38% 35%, var(--peg-light), var(--peg) 55%, #8e9bb0);
-  box-shadow: inset 0 1px 0 #fff;
+header {
+  position: sticky;
+  top: 0;
+  z-index: 4;
+  background: color-mix(in srgb, var(--paper) 88%, transparent);
+  backdrop-filter: blur(12px);
+  border-top: 3px solid var(--mark);
 }
 
 .bar {
@@ -61,23 +56,32 @@ body {
   border-bottom: 1px solid var(--rule);
 }
 
-.mark {
+.name {
   font-family: var(--font-display);
-  font-size: 28px;
   font-weight: 700;
   font-style: normal;
+  letter-spacing: -0.05em;
   color: var(--ink);
   text-decoration: none;
-  letter-spacing: -0.03em;
+  white-space: nowrap;
 }
 
-nav { display: flex; gap: 20px; }
+.name .tok {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  letter-spacing: -0.07em;
+}
+
+.name .cut { color: var(--mark); }
+
+.bar .name { font-size: 22px; }
+
+nav { display: flex; gap: 18px; flex-shrink: 0; }
 
 nav a {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 500;
   color: var(--ink);
   text-decoration: none;
   white-space: nowrap;
@@ -111,11 +115,12 @@ h2 {
   overflow-wrap: anywhere;
 }
 
-h1 {
-  margin: 12px 0;
-  max-width: 11ch;
-  font-size: clamp(44px, 6.4vw, 84px);
-  line-height: 0.92;
+h1.name {
+  margin: 8px 0 14px;
+  max-width: none;
+  overflow-wrap: normal;
+  font-size: clamp(52px, 8vw, 104px);
+  line-height: 0.86;
 }
 
 .lede p {
@@ -133,8 +138,7 @@ h1 {
   width: 100%;
   aspect-ratio: 16 / 9;
   background: var(--film-ink);
-  border: 1px solid var(--ink);
-  box-shadow: 8px 8px 0 var(--rule);
+  outline: 1px solid var(--ink);
   overflow: hidden;
 }
 
@@ -203,11 +207,10 @@ h1 {
   align-items: baseline;
   justify-content: space-between;
   gap: var(--space-3);
-  margin-top: var(--space-2);
+  margin-top: 10px;
   font-family: var(--font-mono);
   font-size: 12px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  letter-spacing: 0.02em;
   color: var(--ink-soft);
 }
 
@@ -219,9 +222,9 @@ h1 {
 
 #hold {
   font: inherit;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  background: transparent;
+  letter-spacing: 0;
+  text-transform: none;
+  background: var(--field);
   color: var(--ink);
   border: 1px solid var(--ink);
   padding: 4px 10px;
@@ -279,6 +282,18 @@ h1 {
   flex-direction: column;
   gap: 14px;
   min-width: 0;
+  background: var(--paper-2);
+  border: 1px solid var(--rule);
+  padding: 18px;
+}
+
+.desk-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1;
 }
 
 .field {
@@ -306,7 +321,7 @@ input[type="text"] {
   letter-spacing: 0;
   text-transform: none;
   color: var(--ink);
-  background: var(--paper-2);
+  background: var(--field);
   border: 1px solid var(--rule);
   border-radius: 2px;
   padding: 12px;
@@ -326,7 +341,7 @@ textarea { min-height: 96px; resize: vertical; }
   align-items: center;
   gap: 8px;
   border: 1px solid var(--rule);
-  background: var(--paper-2);
+  background: var(--field);
   color: var(--ink);
   padding: 8px 10px;
   font-family: var(--font-body);
@@ -420,8 +435,9 @@ textarea { min-height: 96px; resize: vertical; }
 
 h2 {
   margin: 0 0 8px;
-  font-size: clamp(28px, 4vw, 44px);
+  font-size: clamp(32px, 4vw, 44px);
   line-height: 1;
+  letter-spacing: -0.045em;
 }
 
 .section-lead {
@@ -488,20 +504,19 @@ footer a { color: var(--ink); }
 @media (max-width: 959px) {
   .hero { grid-template-columns: minmax(0, 1fr); }
   .lede { grid-column: auto; }
-  h1 { max-width: none; }
   .bar { flex-wrap: wrap; }
   nav { gap: 14px; }
-  nav a { letter-spacing: 0.06em; }
 }
 
 @media (max-width: 640px) {
-  .pegs { padding-inline: 16px; }
   .bar,
   main { padding-inline: 16px; }
   footer { width: min(1180px, calc(100% - 32px)); }
-  .pegs span { width: 12px; height: 12px; }
-  nav { gap: 14px; }
+  .bar .name { font-size: 18px; }
+  nav { gap: 12px; }
+  nav a { font-size: 14px; }
   th { width: 5.5rem; font-size: 18px; }
+  .desk { padding: 14px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

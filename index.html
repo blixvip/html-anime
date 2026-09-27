@@ -3,16 +3,16 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Genga — an anime, drawn in code</title>
+    <title>html-anime</title>
     <meta
       name="description"
-      content="Write a scene. Genga turns it into a shot sheet for Claude, Codex, Cursor, or Grok to draw as a code anime."
+      content="Write a scene. html-anime turns it into a shot sheet. Your agent draws the film as HTML."
     />
-    <meta name="theme-color" content="#dfe7f2" />
+    <meta name="theme-color" content="#eef0f4" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Outfit:wght@400;500;600&family=Shippori+Mincho:wght@500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=Outfit:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="site.css" />
@@ -20,12 +20,8 @@
   <body>
     <a class="skip" href="#sheet">Skip to the sheet</a>
     <header>
-      <div class="pegs" aria-hidden="true">
-        <span></span><span></span><span></span><span></span><span></span><span></span>
-        <span></span><span></span><span></span><span></span><span></span><span></span>
-      </div>
       <div class="bar">
-        <a class="mark" href="#top">Genga</a>
+        <a class="name" href="#top"><span class="tok">html</span><span class="cut">-</span><span class="pic">anime</span></a>
         <nav>
           <a href="#sheet">Sheet</a>
           <a href="#skills">Skills</a>
@@ -36,10 +32,10 @@
     <main id="top">
       <div class="hero">
         <div class="lede">
-          <h1>An anime,<br />drawn in code.</h1>
+          <h1 class="name"><span class="tok">html</span><span class="cut">-</span><span class="pic">anime</span></h1>
           <p>
-            Write the scene. The sheet sets the shots, the holds, and the only colors
-            the agent may use. Paste it into Claude, Codex, Cursor, or Grok.
+            Write a scene. The sheet locks the shots, the holds, and every color.
+            Paste it into Claude, Codex, Cursor, or Grok. They draw the film as HTML.
           </p>
         </div>
 
@@ -197,6 +193,7 @@
         </div>
 
         <form class="desk" id="sheet" autocomplete="off">
+          <p class="desk-title">Sheet</p>
           <label class="field">
             <span>Scene</span>
             <textarea name="logline">On a roof in the rain, a red moon opens and a line of light falls. Someone catches it.</textarea>
@@ -248,28 +245,28 @@
       </div>
 
       <section id="skills">
-        <h2>Five skills. Each owns one job.</h2>
-        <p class="section-lead">The sheet points at them. The agent reads them in order. A rule lives in one skill.</p>
+        <h2>Skills</h2>
+        <p class="section-lead">Five files, read in order. Each one owns a single job.</p>
         <table>
           <tbody>
             <tr>
-              <th><a href="skills/genga-direct/SKILL.md">Direct</a></th>
+              <th><a href="skills/html-anime-direct/SKILL.md">Direct</a></th>
               <td>Which shots exist, and which one of them may be expensive.</td>
             </tr>
             <tr>
-              <th><a href="skills/genga-cel/SKILL.md">Cel</a></th>
+              <th><a href="skills/html-anime-cel/SKILL.md">Cel</a></th>
               <td>Flat color, one hard shadow, a silhouette behind the figure, rain on its own layer.</td>
             </tr>
             <tr>
-              <th><a href="skills/genga-timing/SKILL.md">Timing</a></th>
+              <th><a href="skills/html-anime-timing/SKILL.md">Timing</a></th>
               <td>Twos for acting. A hold of at least 12 frames. One or two smear frames in the sakuga shot.</td>
             </tr>
             <tr>
-              <th><a href="skills/genga-camera/SKILL.md">Camera</a></th>
+              <th><a href="skills/html-anime-camera/SKILL.md">Camera</a></th>
               <td>Where the cut is, where the eyes sit, and how a tall frame is composed.</td>
             </tr>
             <tr>
-              <th><a href="skills/genga-render/SKILL.md">Render</a></th>
+              <th><a href="skills/html-anime-render/SKILL.md">Render</a></th>
               <td>The HyperFrames file. A color dip is the cut. Lint has to pass.</td>
             </tr>
           </tbody>
@@ -277,13 +274,13 @@
       </section>
 
       <section id="agents">
-        <h2>Hand the sheet to an agent.</h2>
+        <h2>Agents</h2>
         <p class="section-lead" id="agent-note"></p>
         <pre id="command"></pre>
       </section>
     </main>
     <footer>
-      <span>Frames are code, rendered with <a href="https://github.com/heygen-com/hyperframes">HyperFrames</a>.</span>
+      <span>Frames are HTML, rendered with <a href="https://github.com/heygen-com/hyperframes">HyperFrames</a>.</span>
       <span>Reference short: <a href="films/roof/index.html">films/roof</a></span>
     </footer>
     <script type="module" src="site.js"></script>

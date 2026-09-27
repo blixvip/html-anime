@@ -1,6 +1,6 @@
 ---
-name: genga-render
-description: Author a Genga anime as a deterministic HyperFrames HTML composition — timeline registration, a color-dip cut, drawing swaps, and the lint gate. Use when writing or fixing the HTML for a code-drawn anime short.
+name: html-anime-render
+description: Author an html-anime film as a deterministic HyperFrames HTML composition — timeline registration, a color-dip cut, drawing swaps, and the lint gate. Use when writing or fixing the HTML for a code-drawn anime short.
 ---
 
 # Render

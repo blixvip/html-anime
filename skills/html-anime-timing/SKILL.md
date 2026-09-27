@@ -1,6 +1,6 @@
 ---
-name: genga-timing
-description: Time code-drawn anime on twos — holds, anticipation, smear frames, and a drawing budget with one sakuga shot. Use when animating a Genga shot, deciding how many drawings a beat gets, or stopping an anime from moving like a UI tween.
+name: html-anime-timing
+description: Time code-drawn anime on twos — holds, anticipation, smear frames, and a drawing budget with one sakuga shot. Use when animating an html-anime shot, deciding how many drawings a beat gets, or stopping an anime from moving like a UI tween.
 ---
 
 # Timing

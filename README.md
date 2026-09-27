@@ -1,28 +1,28 @@
-# Genga
+# html-anime
 
-An anime, drawn in code. You write a scene. [The desk](https://wasely.github.io/genga/) turns it into a shot sheet — holds, one expensive shot, a closed color script. Paste that sheet into Claude, Codex, Cursor, or Grok. The agent draws the frames.
+An anime, written as HTML. You write a scene. [The site](https://wasely.github.io/html-anime/) turns it into a shot sheet: holds, one expensive shot, a closed color script. Paste that sheet into Claude, Codex, Cursor, or Grok. The agent draws the frames.
 
 The pictures are HTML, timed for [HyperFrames](https://github.com/heygen-com/hyperframes). Nothing here calls a video model.
 
 ## Start
 
 ```
-git clone https://github.com/wasely/genga.git
-cd genga
+git clone https://github.com/wasely/html-anime.git
+cd html-anime
 ```
 
-Open the folder in the agent you already use and paste a sheet as the first message. The desk builds the sheet in the browser. `harness/compile.js` builds the same sheet in Node.
+Open the folder in the agent you already use and paste a sheet as the first message. The site builds the sheet in the browser. `harness/compile.js` builds the same sheet in Node.
 
 | Agent | What it reads | Open |
 | --- | --- | --- |
 | Claude Code | `CLAUDE.md` | `claude` |
 | Codex | `AGENTS.md` | `codex` |
-| Cursor | `.cursor/rules/genga.mdc` | `cursor .` |
+| Cursor | `.cursor/rules/html-anime.mdc` | `cursor .` |
 | Grok | `AGENTS.md` | `grok` |
 
 ## What is in the repo
 
-- `index.html` — the desk
+- `index.html` — the site
 - `skills/` — direct, cel, timing, camera, render. Each owns one job
 - `harness/compile.js` — logline to sheet
 - `films/roof/` — an 8 second reference. File shape and the color-dip cut, not a film to remix

@@ -1,6 +1,6 @@
 ---
-name: genga-cel
-description: Paint code-drawn anime frames as flat cels in SVG or HTML — line, local color, one hard shadow, silhouette backgrounds, rain, and a closed color script. Use when drawing a character, background, blade, or effect for a Genga or HyperFrames anime.
+name: html-anime-cel
+description: Paint code-drawn anime frames as flat cels in SVG or HTML — line, local color, one hard shadow, silhouette backgrounds, rain, and a closed color script. Use when drawing a character, background, blade, or effect for an html-anime or HyperFrames film.
 ---
 
 # Cel

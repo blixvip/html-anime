@@ -1,13 +1,13 @@
 ---
-name: genga-direct
-description: Turn a logline into a Genga anime shot sheet — runtime, one sakuga shot, holds, and a color script — before any drawing. Use when someone asks for a code-drawn anime, a Genga sheet, or a short "like an anime made in code."
+name: html-anime-direct
+description: Turn a logline into an html-anime shot sheet — runtime, one sakuga shot, holds, and a color script — before any drawing. Use when someone asks for a code-drawn anime, an html-anime sheet, or a short made as HTML.
 ---
 
 # Direct
 
 The sheet is the film. Draw only after it exists.
 
-If the user pasted a sheet from the Genga desk, that sheet is the brief. If they wrote a logline and nothing else, write the sheet with `harness/compile.js` (8, 12, or 20 seconds) and show it before you draw.
+If the user pasted an html-anime sheet, that sheet is the brief. If they wrote a logline and nothing else, write the sheet with `harness/compile.js` (8, 12, or 20 seconds) and show it before you draw.
 
 ## What you decide
 
@@ -22,10 +22,10 @@ Write `films/<slug>/index.html` at the width and height printed on the sheet.
 
 Then read, in this order, and follow them. They own their subjects. Do not restate them.
 
-1. `skills/genga-cel/SKILL.md` — the paint
-2. `skills/genga-timing/SKILL.md` — the drawings
-3. `skills/genga-camera/SKILL.md` — the cut and the lens
-4. `skills/genga-render/SKILL.md` — the file
+1. `skills/html-anime-cel/SKILL.md` — the paint
+2. `skills/html-anime-timing/SKILL.md` — the drawings
+3. `skills/html-anime-camera/SKILL.md` — the cut and the lens
+4. `skills/html-anime-render/SKILL.md` — the file
 
 `films/roof/index.html` is the file shape and the color-dip cut. It is not a character, a plot, or a palette to reuse.
 
