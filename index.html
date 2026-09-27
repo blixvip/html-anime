@@ -23,6 +23,7 @@
       <div class="bar">
         <a class="name" href="#top"><span class="tok">html</span><span class="cut">-</span><span class="pic">anime</span></a>
         <nav>
+          <a href="#film">Film</a>
           <a href="#sheet">Sheet</a>
           <a href="#skills">Skills</a>
           <a href="#agents">Agents</a>
@@ -34,8 +35,8 @@
         <div class="lede">
           <h1 class="name"><span class="tok">html</span><span class="cut">-</span><span class="pic">anime</span></h1>
           <p>
-            Write a scene. The sheet locks the shots, the holds, and every color.
-            Paste it into Claude, Codex, Cursor, or Grok. They draw the film as HTML.
+            Kokuyō is the film. Write the next scene. The sheet locks the shots, the holds,
+            and the colors. Claude, Codex, Cursor, or Grok draw it as HTML.
           </p>
           <p id="serve-hint" class="serve-hint">
             The sheet runs in the browser. If this note is still here, serve the folder and open the address it prints:
@@ -43,18 +44,34 @@
           </p>
         </div>
 
-        <div class="stage-wrap">
-          <video class="film" controls poster="media/city.jpg" preload="metadata" playsinline>
-            <source src="media/film.mp4" type="video/mp4" />
-          </video>
-          <p class="film-note">Kokuyō. The film.</p>
-          <div class="stills">
+        </div>
+
+      <section class="theater" id="film">
+        <video class="film" controls poster="media/city.jpg" preload="metadata" playsinline>
+          <source src="media/film.mp4" type="video/mp4" />
+        </video>
+        <div class="stills">
+          <button type="button" class="still" data-time="6">
             <img src="media/moon.jpg" alt="A cracked moon falling through rain" width="1600" height="900" />
-            <img src="media/fight.jpg" alt="Two figures crossing blades in front of the moon" width="1600" height="900" />
+          </button>
+          <button type="button" class="still" data-time="22">
             <img src="media/helm.jpg" alt="A dark helm with a red crescent" width="1600" height="900" />
+          </button>
+          <button type="button" class="still" data-time="32">
+            <img src="media/fight.jpg" alt="Two figures crossing blades in front of the moon" width="1600" height="900" />
+          </button>
+          <button type="button" class="still" data-time="41">
             <img src="media/ren.jpg" alt="A close-up washed in white light" width="1600" height="900" />
-          </div>
-          <p class="film-note">A drawing the sheet recolors.</p>
+          </button>
+          <button type="button" class="still" data-time="63">
+            <img src="media/city.jpg" alt="A moon over the night city" width="1600" height="900" />
+          </button>
+        </div>
+        <p class="film-note">Kokuyō · 1:20 · click a frame</p>
+      </section>
+
+      <div class="hero hero-rest">
+        <div class="stage-wrap preview">
           <div
             class="stage"
             id="stage"
@@ -229,6 +246,7 @@
 
         <form class="desk" id="sheet" autocomplete="off">
           <p class="desk-title">Sheet</p>
+          <div class="desk-fields">
           <label class="field">
             <span>Scene</span>
             <textarea name="logline">On a roof in the rain, a red moon opens and a line of light falls. Someone catches it.</textarea>
@@ -270,12 +288,15 @@
               <label><input type="radio" name="agent" value="grok" />Grok</label>
             </div>
           </div>
+          </div>
+          <div class="desk-out">
           <pre id="out" tabindex="0"></pre>
           <div class="actions">
             <button type="button" id="copy-sheet">Copy sheet</button>
             <button type="button" id="copy-command" class="secondary">Copy command</button>
           </div>
           <p id="status" role="status"></p>
+          </div>
         </form>
       </div>
 

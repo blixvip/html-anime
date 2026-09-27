@@ -197,3 +197,15 @@ else pause();
 document.addEventListener("visibilitychange", () => {
   if (document.hidden && playing) pause();
 });
+
+const film = document.querySelector(".film");
+for (const still of document.querySelectorAll(".still")) {
+  still.addEventListener("click", () => {
+    film.currentTime = Number(still.dataset.time);
+    const started = film.play();
+    if (started) started.catch(() => {});
+    for (const item of document.querySelectorAll(".still")) {
+      item.classList.toggle("is-on", item === still);
+    }
+  });
+}
