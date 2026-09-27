@@ -20,19 +20,19 @@ const CUT = 16;
 const AGENTS = {
   claude: {
     note: "Claude Code reads CLAUDE.md, then the five skills.",
-    command: "git clone https://github.com/wasely/html-anime.git\ncd html-anime\nclaude",
+    command: "git clone https://github.com/blixvip/html-anime.git\ncd html-anime\nclaude",
   },
   codex: {
     note: "Codex reads AGENTS.md, then the five skills.",
-    command: "git clone https://github.com/wasely/html-anime.git\ncd html-anime\ncodex",
+    command: "git clone https://github.com/blixvip/html-anime.git\ncd html-anime\ncodex",
   },
   cursor: {
     note: "Cursor reads .cursor/rules/html-anime.mdc. Paste the sheet into Agent.",
-    command: "git clone https://github.com/wasely/html-anime.git\ncd html-anime\ncursor .",
+    command: "git clone https://github.com/blixvip/html-anime.git\ncd html-anime\ncursor .",
   },
   grok: {
     note: "Grok reads AGENTS.md, then the five skills.",
-    command: "git clone https://github.com/wasely/html-anime.git\ncd html-anime\ngrok",
+    command: "git clone https://github.com/blixvip/html-anime.git\ncd html-anime\ngrok",
   },
 };
 

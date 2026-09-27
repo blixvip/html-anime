@@ -1,13 +1,13 @@
 # html-anime
 
-An anime, written as HTML. You write a scene. [The site](https://wasely.github.io/html-anime/) turns it into a shot sheet: holds, one expensive shot, a closed color script. Paste that sheet into Claude, Codex, Cursor, or Grok. The agent draws the frames.
+An anime, written as HTML. You write a scene. [The site](https://blixvip.github.io/html-anime/) turns it into a shot sheet: holds, one expensive shot, a closed color script. Paste that sheet into Claude, Codex, Cursor, or Grok. The agent draws the frames.
 
 The pictures are HTML, timed for [HyperFrames](https://github.com/heygen-com/hyperframes). Nothing here calls a video model.
 
 ## Start
 
 ```
-git clone https://github.com/wasely/html-anime.git
+git clone https://github.com/blixvip/html-anime.git
 cd html-anime
 ```
 
