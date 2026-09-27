@@ -1,5 +1,7 @@
 import { SCRIPTS, compileBrief } from "./harness/compile.js";
 
+document.body.classList.add("is-live");
+
 const stage = document.querySelector("#stage");
 const frameInput = document.querySelector("#frame");
 const counter = document.querySelector("#counter");

@@ -13,6 +13,14 @@ cd html-anime
 
 Open the folder in the agent you already use and paste a sheet as the first message. The site builds the sheet in the browser. `harness/compile.js` builds the same sheet in Node.
 
+Serve the site from this folder, then open the address it prints:
+
+```
+python -m http.server
+```
+
+Opening `index.html` as a file shows that same instruction. The sheet will not run until the folder is served.
+
 | Agent | What it reads | Open |
 | --- | --- | --- |
 | Claude Code | `CLAUDE.md` | `claude` |
@@ -23,7 +31,11 @@ Open the folder in the agent you already use and paste a sheet as the first mess
 ## What is in the repo
 
 - `index.html` — the site
-- `skills/` — direct, cel, timing, camera, render. Each owns one job
+- `skills/html-anime-direct/SKILL.md` — which shots exist
+- `skills/html-anime-cel/SKILL.md` — how a frame is painted
+- `skills/html-anime-timing/SKILL.md` — twos, holds, the smear
+- `skills/html-anime-camera/SKILL.md` — the cut and the frame
+- `skills/html-anime-render/SKILL.md` — the HyperFrames file
 - `harness/compile.js` — logline to sheet
 - `films/roof/` — an 8 second reference. File shape and the color-dip cut, not a film to remix
 - `AGENTS.md` — the contract

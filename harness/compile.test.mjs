@@ -25,9 +25,23 @@ assert.match(brief.markdown, /^# html-anime\n/);
 assert.match(brief.markdown, /1920×1080/);
 assert.match(brief.markdown, /192 frames/);
 assert.match(brief.markdown, /Do not translate/);
-assert.match(brief.markdown, /#e23b4a/);
+assert.match(brief.markdown, /> The rain hid the sound of the blade\./);
 assert.match(brief.markdown, /Sakuga — the expensive shot/);
 assert.doesNotMatch(brief.markdown, /tall frame/);
+
+const listed = new Set([...brief.markdown.matchAll(/#[0-9a-f]{6}/g)].map((match) => match[0]));
+const allowed = new Set(Object.values(SCRIPTS.indigo.colors));
+assert.deepEqual(listed, allowed);
+
+const spans = [...brief.markdown.matchAll(/(\d+\.\d+)–(\d+\.\d+)/g)];
+assert.equal(spans[0][1], "0.00");
+assert.equal(spans.at(-1)[2], "8.00");
+let cursor = 0;
+for (const span of spans) {
+  assert.equal(Number(span[1]), cursor);
+  cursor = Number(span[2]);
+}
+assert.equal(cursor, 8);
 
 const tall = compileBrief({
   logline: "A bell rings once.",
@@ -40,6 +54,10 @@ assert.equal(tall.ok, true);
 assert.match(tall.markdown, /1080×1920/);
 assert.match(tall.markdown, /288 frames/);
 assert.match(tall.markdown, /No dialogue/);
+assert.doesNotMatch(tall.markdown, /Do not translate/);
+const noonHexes = new Set([...tall.markdown.matchAll(/#[0-9a-f]{6}/g)].map((match) => match[0]));
+assert.deepEqual(noonHexes, new Set(Object.values(SCRIPTS.noon.colors)));
+assert.equal(noonHexes.has("#e23b4a"), false);
 assert.match(tall.markdown, /tall frame/);
 assert.equal(tall.slug, "bell-rings-once");
 

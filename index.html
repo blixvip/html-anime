@@ -37,6 +37,10 @@
             Write a scene. The sheet locks the shots, the holds, and every color.
             Paste it into Claude, Codex, Cursor, or Grok. They draw the film as HTML.
           </p>
+          <p id="serve-hint" class="serve-hint">
+            The sheet runs in the browser. If this note is still here, serve the folder and open the address it prints:
+            <code>python -m http.server</code>
+          </p>
         </div>
 
         <div class="stage-wrap">
@@ -82,7 +86,7 @@
                 </g>
 
                 <g class="flare" fill="var(--film-practical)">
-                  <polygon points="1408,300 860,500 890,534 1452,326" />
+                  <polygon points="1392,286 748,560 792,598 1448,328" />
                 </g>
 
                 <path
@@ -108,23 +112,43 @@
                   opacity="0.35"
                 />
 
-                <g class="fig fig-a" transform="translate(760 800)" fill="var(--film-line)">
-                  <path d="M-6,-248 C-78,-236 -108,-180 -92,-120 L-28,-150 C-34,-196 -18,-236 4,-250 Z" />
-                  <circle cx="6" cy="-228" r="34" />
-                  <path d="M-42,-200 L-58,-8 L-16,14 L34,10 L48,-36 L16,-200 Z" />
-                  <path d="M12,-160 L46,-188 L54,-170 L20,-144 Z" />
+                <g class="fig fig-a" transform="translate(690 812)">
+                  <path fill="var(--film-hair)" d="M-4,-236 C-86,-220 -128,-160 -108,-96 L-22,-132 C-36,-178 -18,-224 -2,-238 Z" />
+                  <path fill="var(--film-ink)" stroke="var(--film-line)" stroke-width="7" stroke-linejoin="round" d="M-36,-168 L-52,-18 Q-36,16 -4,14 L32,10 Q48,-16 34,-52 L24,-168 Q-2,-150 -36,-168 Z" />
+                  <path d="M-24,-158 Q2,-140 22,-158" fill="none" stroke="var(--film-accent)" stroke-width="5" stroke-linecap="round" />
+                  <path fill="var(--film-skin)" d="M-6,-186 L-2,-162 L16,-162 L14,-186 Z" />
+                  <ellipse cx="6" cy="-214" rx="30" ry="34" fill="var(--film-skin)" />
+                  <path fill="var(--film-hair)" d="M-24,-228 Q6,-252 34,-226 L28,-196 Q6,-210 -20,-194 Z" />
+                  <path fill="var(--film-hair)" d="M22,-208 C42,-188 40,-156 24,-164 C34,-186 30,-206 22,-208 Z" />
+                  <ellipse cx="16" cy="-214" rx="8" ry="9" fill="var(--film-sclera)" />
+                  <circle cx="18" cy="-213" r="4.5" fill="var(--film-iris)" />
+                  <circle cx="19" cy="-212" r="2.2" fill="var(--film-hair)" />
+                  <path fill="var(--film-ink)" stroke="var(--film-line)" stroke-width="6" stroke-linejoin="round" d="M20,-150 L48,-108 L38,-100 L14,-138 Z" />
                 </g>
-                <g class="fig fig-b" transform="translate(748 802)" fill="var(--film-line)">
-                  <path d="M-8,-246 C-96,-228 -130,-160 -108,-96 L-30,-140 C-40,-190 -22,-236 2,-250 Z" />
-                  <circle cx="8" cy="-226" r="34" />
-                  <path d="M-40,-198 L-64,0 L-14,16 L38,8 L46,-40 L18,-198 Z" />
-                  <path d="M14,-158 L52,-196 L62,-176 L22,-140 Z" />
+                <g class="fig fig-b" transform="translate(684 814)">
+                  <path fill="var(--film-hair)" d="M-2,-234 C-104,-210 -146,-148 -118,-78 L-20,-128 C-40,-176 -16,-222 0,-236 Z" />
+                  <path fill="var(--film-ink)" stroke="var(--film-line)" stroke-width="7" stroke-linejoin="round" d="M-34,-166 L-56,-14 Q-34,18 0,14 L34,8 Q46,-18 30,-54 L22,-166 Q-4,-148 -34,-166 Z" />
+                  <path d="M-22,-156 Q4,-136 24,-156" fill="none" stroke="var(--film-accent)" stroke-width="5" stroke-linecap="round" />
+                  <path fill="var(--film-skin)" d="M-4,-184 L0,-160 L18,-160 L16,-184 Z" />
+                  <ellipse cx="8" cy="-212" rx="30" ry="34" fill="var(--film-skin)" />
+                  <path fill="var(--film-hair)" d="M-22,-226 Q8,-250 36,-224 L30,-194 Q8,-208 -18,-192 Z" />
+                  <path fill="var(--film-hair)" d="M24,-206 C46,-184 42,-150 26,-160 C36,-184 32,-204 24,-206 Z" />
+                  <ellipse cx="18" cy="-212" rx="8" ry="9" fill="var(--film-sclera)" />
+                  <circle cx="20" cy="-211" r="4.5" fill="var(--film-iris)" />
+                  <circle cx="21" cy="-210" r="2.2" fill="var(--film-hair)" />
+                  <path fill="var(--film-ink)" stroke="var(--film-line)" stroke-width="6" stroke-linejoin="round" d="M18,-148 L52,-96 L40,-88 L12,-136 Z" />
                 </g>
-                <g class="fig fig-reach" transform="translate(760 800)" fill="var(--film-line)">
-                  <path d="M-4,-248 C-70,-232 -96,-170 -78,-118 L-24,-148 C-30,-194 -16,-236 6,-250 Z" />
-                  <circle cx="8" cy="-226" r="34" />
-                  <path d="M-38,-196 L-52,-4 L-12,14 L30,8 L24,-196 Z" />
-                  <path d="M8,-170 L78,-292 L96,-270 L22,-152 Z" />
+                <g class="fig fig-reach" transform="translate(690 812)">
+                  <path fill="var(--film-hair)" d="M-6,-238 C-78,-228 -112,-168 -96,-108 L-24,-138 C-34,-180 -20,-226 -4,-240 Z" />
+                  <path fill="var(--film-ink)" stroke="var(--film-line)" stroke-width="7" stroke-linejoin="round" d="M-34,-166 L-46,-16 Q-28,16 2,12 L30,8 L22,-166 Q-4,-148 -34,-166 Z" />
+                  <path d="M-22,-156 Q2,-138 20,-156" fill="none" stroke="var(--film-accent)" stroke-width="5" stroke-linecap="round" />
+                  <path fill="var(--film-skin)" d="M-4,-184 L0,-162 L16,-162 L14,-184 Z" />
+                  <ellipse cx="8" cy="-212" rx="30" ry="34" fill="var(--film-skin)" />
+                  <path fill="var(--film-hair)" d="M-22,-226 Q8,-250 36,-224 L30,-194 Q8,-208 -18,-192 Z" />
+                  <ellipse cx="18" cy="-212" rx="8" ry="9" fill="var(--film-sclera)" />
+                  <circle cx="20" cy="-211" r="4.5" fill="var(--film-iris)" />
+                  <circle cx="21" cy="-210" r="2.2" fill="var(--film-hair)" />
+                  <path fill="var(--film-ink)" stroke="var(--film-line)" stroke-width="6" stroke-linejoin="round" d="M16,-156 L118,-262 L136,-240 L30,-140 Z" />
                 </g>
               </g>
 
@@ -138,10 +162,10 @@
                   <path fill="var(--film-skin)" d="M4,-186 C108,-192 162,-78 146,22 C132,118 74,184 4,198 C-74,184 -140,108 -154,8 C-168,-92 -96,-180 4,-186 Z" />
                   <path fill="var(--film-skin)" d="M-148,30 C-176,52 -174,108 -146,122 C-160,90 -162,58 -148,30 Z" />
                   <path fill="var(--film-ink)" opacity="0.2" d="M-154,8 C-136,100 -70,170 4,198 C-24,140 -36,60 -12,-16 C-60,-8 -114,0 -154,8 Z" />
-                  <path fill="var(--film-hair)" d="M-170,-20 L-120,-168 L-78,-24 Z" />
-                  <path fill="var(--film-hair)" d="M-70,-16 L-16,-188 L46,-12 Z" />
-                  <path fill="var(--film-hair)" d="M36,-8 L92,-162 L156,-6 Z" />
-                  <path fill="var(--film-hair)" d="M-168,-8 C-80,-70 80,-74 160,0 L150,-40 L90,-150 L-16,-170 L-120,-150 L-170,-36 Z" />
+                  <path fill="var(--film-hair)" d="M-150,-42 L-108,-172 L-48,-46 Z" />
+                  <path fill="var(--film-hair)" d="M-52,-40 L-6,-192 L42,-42 Z" />
+                  <path fill="var(--film-hair)" d="M36,-38 L96,-168 L148,-36 Z" />
+                  <path fill="var(--film-hair)" d="M-158,-48 C-40,-96 70,-96 162,-42 L148,-78 L92,-156 L-8,-176 L-118,-156 L-162,-70 Z" />
                   <g class="eyes-open">
                     <g transform="translate(-58,-8)">
                       <ellipse cx="0" cy="0" rx="34" ry="27" fill="var(--film-sclera)" />
