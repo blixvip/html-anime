@@ -117,6 +117,12 @@ const DIRECTION = {
 
 const STOP = new Set("a,an,the,of,to,and,in,on,for,with,as,at,from,by,into,over".split(","));
 
+/**
+ * The fixed shot list for a runtime. Each shot gets its direction text.
+ * @param {number} seconds 8, 12, or 20
+ * @returns {Array<object>} shots whose `dur` values sum to `seconds`, exactly one with `sakuga: true`
+ * @throws {Error} for any other runtime
+ */
 export function shotPlan(seconds) {
   const plan = PLANS[seconds];
   if (!plan) {
@@ -125,6 +131,11 @@ export function shotPlan(seconds) {
   return plan.map((shot) => ({ ...shot, direction: DIRECTION[shot.id] }));
 }
 
+/**
+ * A folder-safe slug from the first four meaningful words of a logline ("untitled" if none).
+ * @param {string} logline
+ * @returns {string}
+ */
 export function slugFrom(logline) {
   const words = logline
     .toLowerCase()
@@ -138,6 +149,12 @@ function clock(seconds) {
   return seconds.toFixed(2);
 }
 
+/**
+ * Build the shot sheet an agent follows.
+ * @param {{logline: string, seconds: number|string, aspect: "16:9"|"9:16", script: string, dialogue?: string}} input
+ * @returns {{ok: true, markdown: string, slug: string, seconds: number, frames: number, width: number, height: number, script: string} | {ok: false, error: string}}
+ *   `ok: false` with a readable `error` when the input breaks a sheet rule; nothing throws.
+ */
 export function compileBrief(input) {
   const logline = String(input.logline ?? "").trim().replace(/\s+/g, " ");
   if (!logline) {
