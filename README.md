@@ -1,13 +1,24 @@
-# html-anime
+<h1 align="center">html-anime</h1>
 
-**Prompt an anime. Your coding agent draws it in code.**
+<p align="center">
+  <b>Prompt an anime. Your coding agent draws it in code.</b>
+</p>
 
-<p>
+<p align="center">
+  <a href="https://github.com/blixvip/html-anime/stargazers"><img src="https://img.shields.io/github/stars/blixvip/html-anime?style=flat-square&color=e8434b" alt="GitHub stars"></a>
   <a href="https://blixvip.github.io/html-anime/"><img src="https://img.shields.io/badge/site-blixvip.github.io%2Fhtml--anime-111?style=flat-square" alt="Site"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-111?style=flat-square" alt="MIT license"></a>
   <img src="https://img.shields.io/badge/render-HyperFrames-111?style=flat-square" alt="HyperFrames">
   <img src="https://img.shields.io/badge/agents-Claude%20%C2%B7%20Codex%20%C2%B7%20Cursor%20%C2%B7%20Grok-111?style=flat-square" alt="Claude, Codex, Cursor, Grok">
   <a href="https://discord.gg/zEB4VjmfSb"><img src="https://img.shields.io/badge/Discord-Join%20the%20community-5865F2?style=flat-square&logo=discord&logoColor=white" alt="Discord"></a>
+</p>
+
+<p align="center">
+  <a href="https://blixvip.github.io/html-anime/"><img src="media/city.jpg" width="860" alt="A moon over the night city, a still from Kokuyō"></a>
+</p>
+
+<p align="center">
+  <sub>A still from <i>Kokuyō</i>, drawn entirely in HTML. <a href="https://blixvip.github.io/html-anime/">Watch it on the site</a> · <a href="media/film.mp4">media/film.mp4</a></sub>
 </p>
 
 An anime, written as HTML. You write a scene. [The site](https://blixvip.github.io/html-anime/) turns it into a shot sheet: holds, one expensive shot, a closed color script. Paste that sheet into Claude, Codex, Cursor, or Grok. The agent draws the frames.
@@ -18,15 +29,16 @@ The pictures are HTML, timed for [HyperFrames](https://github.com/heygen-com/hyp
 
 Kokuyō. Watch it on [the site](https://blixvip.github.io/html-anime/) or open [media/film.mp4](media/film.mp4).
 
-![A moon over the night city](media/city.jpg)
-
-![A cracked moon falling through rain](media/moon.jpg)
-
-![Two figures crossing blades in front of the moon](media/fight.jpg)
-
-![A dark helm with a red crescent](media/helm.jpg)
-
-![A close-up washed in white light](media/ren.jpg)
+<table>
+  <tr>
+    <td width="50%"><img src="media/moon.jpg" alt="A cracked moon falling through rain"></td>
+    <td width="50%"><img src="media/fight.jpg" alt="Two figures crossing blades in front of the moon"></td>
+  </tr>
+  <tr>
+    <td width="50%"><img src="media/helm.jpg" alt="A dark helm with a red crescent"></td>
+    <td width="50%"><img src="media/ren.jpg" alt="A close-up washed in white light"></td>
+  </tr>
+</table>
 
 ## Start
 
