@@ -3,6 +3,6 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "node harness/compile.test.mjs"
+    "test": "node harness/compile.test.mjs && node harness/film.test.mjs"
   }
 }
