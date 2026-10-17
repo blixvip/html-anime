@@ -6,6 +6,12 @@
     "test": "node harness/compile.test.mjs && node harness/film.test.mjs && node harness/assemble-film.test.mjs && node harness/preview-film.test.mjs",
     "film:demo": "node harness/film-cli.mjs examples/moonlight-promise.json build/moonlight-promise",
     "film:assemble": "node harness/assemble-film.mjs",
-    "film:preview": "node harness/preview-film.mjs examples/moonlight-promise.json build/preview"
+    "film:preview": "node harness/preview-film.mjs examples/moonlight-promise.json build/preview",
+    "film:render": "node harness/render-film.mjs build/preview/timeline.json build/preview build/rendered",
+    "film:full": "npm run film:preview && npm run film:render && node harness/assemble-film.mjs build/preview/timeline.json build/rendered build/final/moonlight-promise.mp4"
+  },
+  "dependencies": {
+    "gsap": "3.14.2",
+    "playwright": "1.56.1"
   }
 }
