@@ -1,0 +1,37 @@
+{
+  "title": "Moonlight Promise",
+  "aspect": "16:9",
+  "script": "indigo",
+  "characters": [
+    {
+      "id": "ren",
+      "name": "Ren",
+      "appearance": "Black hair, indigo cloak, amber eyes",
+      "costume": "Indigo cloak with red trim"
+    }
+  ],
+  "scenes": [
+    {
+      "seconds": 20,
+      "logline": "Ren watches a fractured moon from a rainy rooftop, holding a sealed letter.",
+      "characters": [
+        "ren"
+      ]
+    },
+    {
+      "seconds": 20,
+      "logline": "A red streak cuts across the sky. Ren runs toward the rooftop edge as the city lights blink.",
+      "characters": [
+        "ren"
+      ]
+    },
+    {
+      "seconds": 20,
+      "logline": "Ren opens the letter. A warm light rises into the storm, and the moon begins to heal.",
+      "characters": [
+        "ren"
+      ],
+      "dialogue": "Even the longest night must end."
+    }
+  ]
+}
