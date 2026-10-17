@@ -3,7 +3,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "node harness/compile.test.mjs && node harness/film.test.mjs",
-    "film:demo": "node harness/film-cli.mjs examples/moonlight-promise.json build/moonlight-promise"
+    "test": "node harness/compile.test.mjs && node harness/film.test.mjs && node harness/assemble-film.test.mjs",
+    "film:demo": "node harness/film-cli.mjs examples/moonlight-promise.json build/moonlight-promise",
+    "film:assemble": "node harness/assemble-film.mjs"
   }
 }
