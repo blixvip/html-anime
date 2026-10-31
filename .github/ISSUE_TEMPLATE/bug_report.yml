@@ -1,0 +1,66 @@
+name: 🐞 Bug report
+description: Something in html-anime is broken or behaves unexpectedly.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting! Quick checks first:
+        - You need **Node.js 20+**.
+        - The site must be **served**, not opened as a file — `site.js` imports `harness/compile.js` as a module, so `python -m http.server` then open the printed address.
+        - The film pipeline also needs **FFmpeg and ffprobe** on `PATH` and Chromium (`npx playwright install chromium`). See `docs/LOCAL_RENDER.md`.
+
+        For questions rather than bugs, the [Discord](https://discord.gg/zEB4VjmfSb) is faster.
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - The site / shot sheet compiler
+        - Film manifest → timeline (harness/film.js)
+        - Scene HTML generation (preview-film)
+        - Rendering frames (render-film, Chromium)
+        - Assembling the final MP4 (assemble-film, FFmpeg)
+        - The skills (SKILL.md files)
+        - A film I hand-authored
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: What did you do, what did you expect, and what happened instead?
+      placeholder: "1. npm run film:preview\n2. npm run film:render\n3. It threw 'HTML composition metadata or GSAP timeline invalid'"
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs or console output
+      description: Terminal output and/or the browser console (F12). Pasted text is rendered as code.
+      render: shell
+  - type: input
+    id: os
+    attributes:
+      label: Operating system
+      placeholder: Windows 11, macOS 15, Ubuntu 24.04…
+    validations:
+      required: true
+  - type: input
+    id: node
+    attributes:
+      label: Node.js version (`node -v`)
+      placeholder: v22.12.0
+    validations:
+      required: true
+  - type: input
+    id: ffmpeg
+    attributes:
+      label: FFmpeg version (`ffmpeg -version`, first line)
+      description: Only needed for render or assembly problems.
+  - type: input
+    id: commit
+    attributes:
+      label: Commit
+      description: "`git rev-parse --short HEAD`"
