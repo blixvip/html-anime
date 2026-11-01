@@ -58,6 +58,11 @@ function applyScript(id) {
   stage.dataset.script = id;
 }
 
+function parseFrame(value, fallback) {
+  const frame = Number(value);
+  return Number.isFinite(frame) ? frame : fallback;
+}
+
 function applyFrame(n) {
   const frame = ((Number(n) % 24) + 24) % 24;
   frameInput.value = String(frame);
@@ -160,6 +165,7 @@ function play() {
 form.addEventListener("submit", (event) => event.preventDefault());
 form.addEventListener("input", renderSheet);
 frameInput.addEventListener("input", () => {
+  if (!Number.isFinite(Number(frameInput.value))) return;
   pause();
   applyFrame(frameInput.value);
 });
@@ -190,7 +196,8 @@ for (const name of ["aspect", "script", "seconds", "agent"]) {
 renderSheet();
 
 const frameParam = params.get("frame");
-applyFrame(frameParam == null ? (reduced ? 8 : 0) : frameParam);
+const defaultFrame = reduced ? 8 : 0;
+applyFrame(frameParam == null ? defaultFrame : parseFrame(frameParam, defaultFrame));
 if (playing && frameParam == null) play();
 else pause();
 
