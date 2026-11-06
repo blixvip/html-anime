@@ -1,0 +1,32 @@
+name: CI
+
+# Runs the harness tests on every pull request, so a contributor's first PR
+# reports for itself instead of review starting with "did you run the tests?".
+#
+# This installs npm dependencies but deliberately does NOT run
+# `npx playwright install chromium`: the four test files are pure Node
+# assertions and never launch a browser. Rendering a film needs Chromium and
+# FFmpeg, and that is not what this job checks.
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - run: npm test
