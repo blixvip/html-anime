@@ -25,8 +25,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: npm
 
-      - run: npm ci
+      # No package-lock.json is committed, so npm ci and the npm cache are unavailable.
+      - run: npm install
 
       - run: npm test
