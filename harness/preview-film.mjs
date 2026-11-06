@@ -1,5 +1,6 @@
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { resolve, join } from "node:path";
+import { pathToFileURL } from "node:url";
 import { compileFilm } from "./film.js";
 import { SCRIPTS } from "./compile.js";
 
@@ -65,7 +66,7 @@ export async function buildPreview(manifestPath, outputDir) {
   return { dir, scenes: film.shots.length, frames: film.totalFrames };
 }
 
-if (process.argv[1] && import.meta.url === new URL(`file://${resolve(process.argv[1])}`).href) {
+if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {
   const [manifest, output = "build/preview"] = process.argv.slice(2);
   if (!manifest) {
     console.error("Usage: node harness/preview-film.mjs <manifest.json> [output-directory]");

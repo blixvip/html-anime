@@ -1,5 +1,6 @@
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { resolve, join } from "node:path";
+import { pathToFileURL } from "node:url";
 import { spawn } from "node:child_process";
 
 /**
@@ -90,7 +91,7 @@ export async function assembleFilm(timelinePath, shotsDirectory, outputPath) {
   return out;
 }
 
-if (process.argv[1] && import.meta.url === new URL(`file://${resolve(process.argv[1])}`).href) {
+if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {
   const [timeline, shotDir, output] = process.argv.slice(2);
   if (!timeline || !shotDir || !output) {
     console.error("Usage: node harness/assemble-film.mjs <timeline.json> <rendered-shots-dir> <output.mp4>");
