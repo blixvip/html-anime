@@ -2,6 +2,9 @@
   "name": "html-anime",
   "private": true,
   "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
     "test": "node harness/compile.test.mjs && node harness/film.test.mjs && node harness/assemble-film.test.mjs && node harness/preview-film.test.mjs && node harness/file-urls.test.mjs",
     "film:demo": "node harness/film-cli.mjs examples/moonlight-promise.json build/moonlight-promise",
