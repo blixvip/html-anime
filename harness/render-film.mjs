@@ -6,6 +6,7 @@
  */
 import { readFile, mkdir } from "node:fs/promises";
 import { resolve, join } from "node:path";
+import { pathToFileURL } from "node:url";
 import { spawn } from "node:child_process";
 import { createRequire } from "node:module";
 import { validateTimeline } from "./assemble-film.mjs";
@@ -44,7 +45,7 @@ export async function renderShots(timelinePath, htmlDir, outputDir, options = {}
         // Supply pinned GSAP locally so rendering does not require network access.
         await page.route("https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js",
           route => route.fulfill({ status: 200, contentType: "application/javascript", body: gsapCode }));
-        await page.goto("file://" + join(resolve(htmlDir), shot.id, "index.html"), { waitUntil: "load" });
+        await page.goto(pathToFileURL(join(resolve(htmlDir), shot.id, "index.html")).href, { waitUntil: "load" });
         await page.evaluate(() => document.fonts.ready);
         const actual = await page.evaluate(() => {
           const root = document.querySelector("[data-composition-id]");
@@ -98,7 +99,7 @@ export async function renderShots(timelinePath, htmlDir, outputDir, options = {}
   return output;
 }
 
-if (process.argv[1] && import.meta.url === new URL(`file://${resolve(process.argv[1])}`).href) {
+if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {
   const [timeline, htmlDir, outputDir] = process.argv.slice(2);
   if (!timeline || !htmlDir || !outputDir) {
     console.error("Usage: node harness/render-film.mjs <timeline.json> <html-scenes-dir> <output-dir>");

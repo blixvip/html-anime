@@ -42,6 +42,8 @@ Kokuyō. Watch it on [the site](https://blixvip.github.io/html-anime/) or open [
 
 ## Start
 
+Use **Node.js 20 or newer** for the Node commands below.
+
 ```
 git clone https://github.com/blixvip/html-anime.git
 cd html-anime
@@ -57,7 +59,7 @@ python -m http.server
 
 Opening `index.html` as a file shows that same instruction. The sheet will not run until the folder is served.
 
-Or build a sheet in Node (no dependencies):
+Or build a sheet in Node with the dependency-free sheet compiler (the film pipeline below uses npm dependencies):
 
 ```js
 import { compileBrief } from "./harness/compile.js";
@@ -79,6 +81,43 @@ console.log(sheet.ok ? sheet.markdown : sheet.error);
 | Cursor | `.cursor/rules/html-anime.mdc` | `cursor .` |
 | Grok | `AGENTS.md` | `grok` |
 
+## Film pipeline
+
+The multi-scene pipeline starts from a JSON film manifest. From the repository root:
+
+```sh
+npm install
+npm test
+```
+
+Rendering also needs **FFmpeg and ffprobe on `PATH`**, plus Chromium:
+
+```sh
+npx playwright install chromium
+npm run film:full
+```
+
+Alternatively, set `CHROMIUM_PATH` to your system Chromium executable, as described in
+[Local end-to-end render](docs/LOCAL_RENDER.md). `film:full` runs preview generation,
+rendering, then assembly; its example output is `build/final/moonlight-promise.mp4`.
+The output is silent: audio mixing is not implemented. The example captures 1,440
+frames at 1920×1080 and 24 FPS, so a full render takes more time and disk space than
+the sheet compiler or the tests. Only render trusted local scene HTML.
+
+| Command | Stage and output |
+| --- | --- |
+| `npm run film:demo` | Compile the manifest into shot sheets and `timeline.json` in `build/moonlight-promise/`; this does not draw HTML or render video. |
+| `npm run film:preview` | Generate deterministic scene HTML and `timeline.json` in `build/preview/`. |
+| `npm run film:render` | Capture the preview scenes frame by frame and encode silent scene MP4s in `build/rendered/`. |
+| `npm run film:assemble -- build/preview/timeline.json build/rendered build/final/moonlight-promise.mp4` | Validate the scene files and concatenate them into the final silent MP4. |
+
+For prerequisites, individual stages and current limitations, read
+[Local end-to-end render](docs/LOCAL_RENDER.md). The
+[Short Film Engine plan](docs/SHORT_FILM_ENGINE_PLAN.md) and
+[Rendering integration roadmap](docs/RENDERING_NEXT.md) record the design and
+earlier milestones; their planned audio and production features are not a claim
+that those features are implemented.
+
 ## What is in the repo
 
 - `index.html` — the site
@@ -88,6 +127,9 @@ console.log(sheet.ok ? sheet.markdown : sheet.error);
 - `skills/html-anime-camera/SKILL.md` — the cut and the frame
 - `skills/html-anime-render/SKILL.md` — the HyperFrames file
 - `harness/compile.js` — logline to sheet
+- `harness/film.js` and `harness/film-cli.mjs` — film manifest to timeline and per-scene shot sheets
+- `harness/preview-film.mjs` — timeline to scene HTML
+- `harness/render-film.mjs` and `harness/assemble-film.mjs` — scene HTML to silent scene MP4s, then the assembled film
 - `media/film.mp4` — Kokuyō, the film
 - `media/city.jpg`, `media/moon.jpg`, `media/fight.jpg`, `media/helm.jpg`, `media/ren.jpg` — stills from it
 - `films/roof/` — an 8 second reference. File shape and the color-dip cut, not a film to remix
@@ -99,7 +141,8 @@ console.log(sheet.ok ? sheet.markdown : sheet.error);
 npm test
 ```
 
-Checks that every runtime sums exactly and has one sakuga shot, and that the sheet carries the size, frame count, and dialogue.
+Checks shot-sheet durations and contents, multi-scene timeline compilation, preview generation,
+and assembly validation. The tests do not require Chromium or FFmpeg; they do not render a film.
 
 ## Render the reference
 
