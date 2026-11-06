@@ -47,12 +47,14 @@ export async function renderShots(timelinePath, htmlDir, outputDir, options = {}
         await page.goto("file://" + join(resolve(htmlDir), shot.id, "index.html"), { waitUntil: "load" });
         await page.evaluate(() => document.fonts.ready);
         const actual = await page.evaluate(() => {
-          const root = document.querySelector('[data-composition-id="film"]');
+          const root = document.querySelector("[data-composition-id]");
+          const id = root?.dataset.compositionId;
           return {
+            id,
             duration: Number(root?.dataset.duration),
             width: Number(root?.dataset.width),
             height: Number(root?.dataset.height),
-            hasTimeline: Boolean(window.__timelines?.film)
+            hasTimeline: Boolean(id && window.__timelines?.[id])
           };
         });
         if (!actual.hasTimeline || actual.duration !== shot.seconds ||
@@ -72,11 +74,11 @@ export async function renderShots(timelinePath, htmlDir, outputDir, options = {}
           encoder.on("close", code => code === 0 ? res() : rej(new Error(`ffmpeg failed (${code}): ${stderr.slice(-1000)}`)));
         });
         for (let frame = 0; frame < shot.frames; frame++) {
-          await page.evaluate(time => {
-            const tl = window.__timelines.film;
+          await page.evaluate(({ id, time }) => {
+            const tl = window.__timelines[id];
             tl.pause();
             tl.seek(time, false);
-          }, frame / film.fps);
+          }, { id: actual.id, time: frame / film.fps });
           const png = await page.screenshot({ type: "png", animations: "allow" });
           if (!encoder.stdin.write(png)) await new Promise(res => encoder.stdin.once("drain", res));
         }
