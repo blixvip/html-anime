@@ -6,7 +6,7 @@
     "node": ">=20"
   },
   "scripts": {
-    "test": "node harness/compile.test.mjs && node harness/film.test.mjs && node harness/assemble-film.test.mjs && node harness/preview-film.test.mjs && node harness/film-composition.test.mjs",
+    "test": "node harness/compile.test.mjs && node harness/film.test.mjs && node harness/assemble-film.test.mjs && node harness/preview-film.test.mjs && node harness/file-urls.test.mjs && node harness/film-composition.test.mjs",
     "film:demo": "node harness/film-cli.mjs examples/moonlight-promise.json build/moonlight-promise",
     "film:assemble": "node harness/assemble-film.mjs",
     "film:preview": "node harness/preview-film.mjs examples/moonlight-promise.json build/preview",
