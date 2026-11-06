@@ -166,6 +166,12 @@ npx hyperframes validate
 - Only the hexes printed on the sheet
 - The line you wrote, verbatim, or no dialogue at all
 
+## Contributors
+
+Thank you to everyone who has helped build html-anime. New here? Read [CONTRIBUTING.md](CONTRIBUTING.md) and pick one of the [good first issues](https://github.com/blixvip/html-anime/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22).
+
+<a href="https://github.com/blixvip/html-anime/graphs/contributors"><img src="https://contrib.rocks/image?repo=blixvip/html-anime" alt="Contributors" /></a>
+
 ## Community
 
 💬 [Join the Discord](https://discord.gg/zEB4VjmfSb) for questions, help, feedback, and updates.
