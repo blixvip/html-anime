@@ -1,5 +1,43 @@
 import assert from "node:assert/strict";
-import { ASPECTS, compileBrief, SCRIPTS, shotPlan } from "./compile.js";
+import { ASPECTS, compileBrief, SCRIPTS, shotPlan, slugFrom } from "./compile.js";
+
+for (const [logline, expected] of [
+  ["月の下で剣士が刀を抜く", "月の下て剣士か刀を抜く"],
+  ["星空下 少年 拔刀", "星空下-少年-拔刀"],
+  ["달빛 아래", "달빛-아래"],
+  ["Café à minuit", "cafe-minuit"],
+  ["Cafe\u0301 a\u0300 minuit", "cafe-minuit"],
+  ["Cafe\u1ab0 minuit", "cafe-minuit"],
+  ["Crème brûlée", "creme-brulee"],
+  ["Ｃａｆé １２３", "cafe-123"],
+  ["\u{10400} moon", "\u{10428}-moon"],
+  ["On a roof in the rain, a red moon opens.", "roof-rain-red-moon"],
+  ["A bell rings once.", "bell-rings-once"],
+  ["ONE two THREE four five", "one-two-three-four"],
+  ["a an the of to and in on for with as at from by into over", "untitled"],
+  ["theater android", "theater-android"],
+  ["  red\tmoon\n rises  ", "red-moon-rises"],
+  ["Moon's light--falls_now", "moon-s-light-falls"],
+  ["../月\\星:夜*光?\"<>|", "月-星-夜-光"],
+  ["月／星＼夜", "月-星-夜"],
+  ["moon🌙light", "moon-light"],
+  ["", "untitled"],
+  [" \t\n ", "untitled"],
+  ["../\\:*?\"<>|---!!!", "untitled"],
+  ["🌙✨🎬", "untitled"],
+  ["\u0301\u1ab0", "untitled"],
+]) {
+  const slug = slugFrom(logline);
+  assert.equal(slug, expected, logline);
+  assert.match(slug, /^[\p{L}\p{N}]+(?:-[\p{L}\p{N}]+)*$/u, logline);
+}
+
+for (const logline of ["Café à minuit", "月の下で剣士が刀を抜く"]) {
+  const sheet = compileBrief({ logline, seconds: 8, aspect: "16:9", script: "indigo" });
+  assert.equal(sheet.ok, true);
+  assert.equal(sheet.slug, slugFrom(logline));
+  assert.ok(sheet.markdown.includes(`Write films/${sheet.slug}/index.html.`));
+}
 
 for (const seconds of [8, 12, 20]) {
   const shots = shotPlan(seconds);

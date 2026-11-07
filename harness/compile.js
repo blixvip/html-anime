@@ -133,13 +133,16 @@ export function shotPlan(seconds) {
 
 /**
  * A folder-safe slug from the first four meaningful words of a logline ("untitled" if none).
+ * Normalize with NFKD, remove combining marks, and retain Unicode letters and numbers.
  * @param {string} logline
  * @returns {string}
  */
 export function slugFrom(logline) {
   const words = logline
+    .normalize("NFKD")
     .toLowerCase()
-    .replace(/[^a-z0-9\s]/g, " ")
+    .replace(/\p{M}/gu, "")
+    .replace(/[^\p{L}\p{N}\s]/gu, " ")
     .split(/\s+/)
     .filter((word) => word && !STOP.has(word));
   return words.slice(0, 4).join("-") || "untitled";
