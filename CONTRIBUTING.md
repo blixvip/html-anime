@@ -1,8 +1,8 @@
 # Contributing to html-anime
 
-> 💬 **Before you open a PR, join the [blix open source Discord](https://discord.gg/wJfHQXfEMM).** It's the home for contributors across every blixvip repo: ask questions, run ideas by us, and talk through your PR.
+> 💬 **Before you open a PR, join the [blix open source Discord](https://discord.gg/grokbot).** It's the home for contributors across every blixvip repo: ask questions, run ideas by us, and talk through your PR.
 
-Thanks for helping! Questions and ideas are welcome in the **[Discord](https://discord.gg/wJfHQXfEMM)**, and bugs go in [GitHub issues](https://github.com/blixvip/html-anime/issues/new/choose).
+Thanks for helping! Questions and ideas are welcome in the **[Discord](https://discord.gg/grokbot)**, and bugs go in [GitHub issues](https://github.com/blixvip/html-anime/issues/new/choose).
 
 ## Finding something to work on
 
@@ -61,4 +61,4 @@ npm test
 - `AGENTS.md`: the agent contract. `CLAUDE.md`, `GEMINI.md` and `.cursor/rules/html-anime.mdc` are one-line redirects to it.
 - `site.js` + `index.html`: the browser front end.
 
-Made a film with it? Show it off in the [Discord](https://discord.gg/wJfHQXfEMM).
+Made a film with it? Show it off in the [Discord](https://discord.gg/grokbot).
