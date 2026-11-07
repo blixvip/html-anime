@@ -149,13 +149,11 @@ function pause() {
   playing = false;
   window.clearInterval(timer);
   holdBtn.textContent = "Play";
-  holdBtn.setAttribute("aria-pressed", "true");
 }
 
 function play() {
   playing = true;
   holdBtn.textContent = "Hold";
-  holdBtn.setAttribute("aria-pressed", "false");
   window.clearInterval(timer);
   timer = window.setInterval(() => {
     applyFrame(Number(frameInput.value) + 1);
