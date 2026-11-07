@@ -10,7 +10,7 @@ body:
         - The site must be **served**, not opened as a file — `site.js` imports `harness/compile.js` as a module, so `python -m http.server` then open the printed address.
         - The film pipeline also needs **FFmpeg and ffprobe** on `PATH` and Chromium (`npx playwright install chromium`). See `docs/LOCAL_RENDER.md`.
 
-        For questions rather than bugs, the [Discord](https://discord.gg/wJfHQXfEMM) is faster.
+        For questions rather than bugs, the [Discord](https://discord.gg/grokbot) is faster.
   - type: dropdown
     id: area
     attributes:
