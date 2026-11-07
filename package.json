@@ -6,7 +6,7 @@
     "node": ">=20"
   },
   "scripts": {
-    "test": "node --test \"harness/*.test.mjs\"",
+    "test": "cd harness && node --test",
     "film:demo": "node harness/film-cli.mjs examples/moonlight-promise.json build/moonlight-promise",
     "film:assemble": "node harness/assemble-film.mjs",
     "film:preview": "node harness/preview-film.mjs examples/moonlight-promise.json build/preview",
