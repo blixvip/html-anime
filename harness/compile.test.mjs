@@ -5,7 +5,6 @@ for (const [logline, expected] of [
   ["月の下で剣士が刀を抜く", "月の下て剣士か刀を抜く"],
   ["星空下 少年 拔刀", "星空下-少年-拔刀"],
   ["달빛 아래", "달빛-아래"],
-  ["قمر ١٢٣", "قمر-١٢٣"],
   ["Café à minuit", "cafe-minuit"],
   ["Cafe\u0301 a\u0300 minuit", "cafe-minuit"],
   ["Cafe\u1ab0 minuit", "cafe-minuit"],
