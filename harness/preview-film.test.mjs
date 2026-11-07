@@ -2,11 +2,13 @@ import assert from "node:assert/strict";
 import { mkdtemp, readFile, rm } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
+import { fileURLToPath } from "node:url";
 import { buildPreview } from "./preview-film.mjs";
 
 const dir = await mkdtemp(join(tmpdir(), "html-anime-preview-"));
 try {
-  const result = await buildPreview("examples/moonlight-promise.json", dir);
+  const manifest = fileURLToPath(new URL("../examples/moonlight-promise.json", import.meta.url));
+  const result = await buildPreview(manifest, dir);
   assert.equal(result.scenes, 3);
   assert.equal(result.frames, 1440);
   const timeline = JSON.parse(await readFile(join(dir, "timeline.json"), "utf8"));
