@@ -1,0 +1,8 @@
+{
+  "name": "html-anime",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:1-22-bookworm",
+  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y --no-install-recommends ffmpeg && npm install && npx playwright install --with-deps chromium && npm test",
+  "forwardPorts": [8000],
+  "portsAttributes": { "8000": { "label": "site (python3 -m http.server)" } },
+  "customizations": { "vscode": { "extensions": ["ms-playwright.playwright"] } }
+}
