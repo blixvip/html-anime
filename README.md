@@ -22,7 +22,7 @@
 </p>
 
 <p align="center">
-  🛠 <b>Built in the open</b> — 5 contributors · 16 good first issues · we review PRs within 24h → <a href="https://github.com/blixvip/html-anime/issues/17">start here</a>
+  🛠 <b>Built in the open</b> — 6 contributors · 15 good first issues · we review PRs within 24h → <a href="https://github.com/blixvip/html-anime/issues/17">start here</a>
 </p>
 
 An anime, written as HTML. You write a scene. [The site](https://blixvip.github.io/html-anime/) turns it into a shot sheet: holds, one expensive shot, a closed color script. Paste that sheet into Claude, Codex, Cursor, or Grok. The agent draws the frames.
