@@ -4,6 +4,14 @@
 
 Thanks for helping! Questions and ideas are welcome in the **[Discord](https://discord.gg/grokbot)**, and bugs go in [GitHub issues](https://github.com/blixvip/html-anime/issues/new/choose).
 
+## Your first PR in 10 minutes
+
+1. **Get the code.** Fork and clone, or skip local setup and [open a Codespace](https://codespaces.new/blixvip/html-anime?quickstart=1) (Node 22, FFmpeg and Chromium preinstalled).
+2. **Install:** `npm install`
+3. **Run the tests:** `npm test` (about 2 seconds, no browser or FFmpeg needed).
+4. **Pick a [good first issue](https://github.com/blixvip/html-anime/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)** and comment to claim it. Each one lists the files to touch.
+5. **Open a PR** from a branch, with `Fixes #<number>` in the description. CI runs `npm test`; we review within 24h.
+
 ## Finding something to work on
 
 - [Good first issues](https://github.com/blixvip/html-anime/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22) are small and list the files to touch.

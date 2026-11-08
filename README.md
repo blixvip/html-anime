@@ -21,6 +21,10 @@
   <sub>A still from <i>Kokuyō</i>, drawn entirely in HTML. <a href="https://blixvip.github.io/html-anime/">Watch it on the site</a> · <a href="media/film.mp4">media/film.mp4</a></sub>
 </p>
 
+<p align="center">
+  🛠 <b>Built in the open</b> — 5 contributors · 16 good first issues · we review PRs within 24h → <a href="https://github.com/blixvip/html-anime/issues/17">start here</a>
+</p>
+
 An anime, written as HTML. You write a scene. [The site](https://blixvip.github.io/html-anime/) turns it into a shot sheet: holds, one expensive shot, a closed color script. Paste that sheet into Claude, Codex, Cursor, or Grok. The agent draws the frames.
 
 The pictures are HTML, timed for [HyperFrames](https://github.com/heygen-com/hyperframes). Nothing here calls a video model.
@@ -167,6 +171,8 @@ npx hyperframes validate
 - The line you wrote, verbatim, or no dialogue at all
 
 ## Contributors
+
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/blixvip/html-anime?quickstart=1)
 
 Thank you to everyone who has helped build html-anime. New here? Read [CONTRIBUTING.md](CONTRIBUTING.md) and pick one of the [good first issues](https://github.com/blixvip/html-anime/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22).
 
