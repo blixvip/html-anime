@@ -3,5 +3,6 @@ Thumbs.db
 node_modules/
 .hyperframes/
 renders/
+build/
 *.mp4
 !media/film.mp4
